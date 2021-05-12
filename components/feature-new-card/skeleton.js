@@ -5,7 +5,7 @@ export default function FeatureNewSkeletonCard() {
       <div>
         <h3 className="text-lg font-bold">
           <span className="bg-gray-100 rounded">
-            New awesome feature request please
+            New awesome restaurant request please
           </span>
         </h3>
         <div className="mt-1 flex items-center space-x-2 leading-4">

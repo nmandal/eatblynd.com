@@ -1,5 +1,5 @@
 {
-  "name": "upstash-roadmap",
+  "name": "eatblynd-restaurant-roadmap",
   "version": "0.0.1",
   "scripts": {
     "dev": "next dev",

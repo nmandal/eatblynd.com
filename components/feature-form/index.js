@@ -23,7 +23,7 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
         className="input"
         type="text"
         ref={inputNewFeature}
-        placeholder="Enter a new feature request?"
+        placeholder="Enter a new restaurant request"
       />
       {/*isAuthenticated && (
         <button className="button" type="button" onClick={() => logout()}>
@@ -33,7 +33,7 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
     </form>
   ) : (
     <div className="flex flex-col items-center space-y-2 bg-green-50 text-green-800 px-3 py-6 rounded">
-      <p>Please login to request or vote for a new feature</p>
+      <p>Please login to request or vote for a new restaurant</p>
       <button
         className="button bg-green-700"
         type="button"

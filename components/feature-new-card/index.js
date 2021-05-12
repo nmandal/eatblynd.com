@@ -10,13 +10,13 @@ export default function FeatureNewCard({
   const { score, title, createdAt, user } = item
 
   const publish = () => {
-    if (confirm('Feature will be released. Are you sure?')) {
+    if (confirm('Restaurant will be released. Are you sure?')) {
       onPublish(item)
     }
   }
 
   const remove = () => {
-    if (confirm('Feature will be removed. Are you sure?')) {
+    if (confirm('Restaurant will be removed. Are you sure?')) {
       onRemove(item)
     }
   }

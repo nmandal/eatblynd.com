@@ -1,6 +1,4 @@
-# Roadmap Voting App 
-
-![](https://github.com/upstash/roadmap/blob/main/public/ss.png)
+# Restaurant Voting App 
 
 You can deploy Roadmap application yourself and get feedback from your users about your roadmap features. See the [live example](https://roadmap.upstash.com).
 

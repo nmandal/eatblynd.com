@@ -57,7 +57,7 @@ export default function FeatureList({
                 showAllSet(true)
               }}
             >
-              Show all features
+              Show all restaurants
             </button>
           </div>
         ) : (
@@ -67,7 +67,7 @@ export default function FeatureList({
         )}
       </div>
 
-      {/* RELEASED FEATURE LIST */}
+      {/* RELEASED RESTAURANT LIST */}
 
       {RELEASED_DATA.length > 0 && (
         <div className="mt-10">
