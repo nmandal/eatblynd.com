@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }) {
       redirectUri={process.browser && window.location.origin}
     >
       <Head>
-        <title>Roadmap Voting</title>
+        <title>Blynd: Food Serendipity</title>
       </Head>
 
       <div className="antialiased max-w-xl mx-auto px-4">
