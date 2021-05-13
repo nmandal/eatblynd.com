@@ -25,11 +25,11 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
         ref={inputNewFeature}
         placeholder="Enter a new restaurant request"
       />
-      {/*isAuthenticated && (
+      {isAuthenticated && (
         <button className="button" type="button" onClick={() => logout()}>
           Logout
         </button>
-      )*/}
+      )}
     </form>
   ) : (
     <div className="flex flex-col items-center space-y-2 bg-green-50 text-green-800 px-3 py-6 rounded">
