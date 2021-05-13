@@ -74,7 +74,12 @@ export default function FeatureList({
           <h2 className="font-bold">Released</h2>
           <div className="mt-4 space-y-2">
             {RELEASED_DATA.map((item, index) => (
-              <FeatureReleaseCard key={index} item={item} />
+              <FeatureReleaseCard
+                admin={auth?.user?.sub}
+                key={index}
+                item={item}
+                onRemove={onRemove}
+              />
             ))}
           </div>
         </div>

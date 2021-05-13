@@ -1,5 +1,11 @@
-export default function FeatureReleaseCard({ item }) {
+export default function FeatureReleaseCard({ item, onRemove }) {
   const { score, title } = item
+
+  const remove = () => {
+    if (confirm('Restaurant will be removed. Are you sure?')) {
+      onRemove(item)
+    }
+  }
 
   return (
     <article className="flex items-center space-x-4">
@@ -10,6 +16,18 @@ export default function FeatureReleaseCard({ item }) {
         <span className="font-bold text-sm">{score}</span>
       </div>
       <h5>{title}</h5>
+      {process.env.NEXT_PUBLIC_AUTH0_ADMIN_ID === admin && (
+            <>
+              <span>•</span>
+              <button
+                type="button"
+                onClick={remove}
+                className="hover:text-gray-800 hover:underline"
+              >
+                Remove
+              </button>
+            </>
+      )}
     </article>
   )
 }
