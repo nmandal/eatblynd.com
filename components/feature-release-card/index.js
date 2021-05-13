@@ -1,4 +1,4 @@
-export default function FeatureReleaseCard({ item, onRemove }) {
+export default function FeatureReleaseCard({ item, onRemove, admin }) {
   const { score, title } = item
 
   const remove = () => {

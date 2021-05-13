@@ -3,7 +3,7 @@ export default function Header() {
     <header className="pt-10 mb-10">
       <div className="flex justify-center">
         {/*<img src="/upstash.svg" alt="Upstash" width={140} />*/}
-        <h1>Blynd: Food Serendipity</h1>
+        <h1 className="text-9xl font-bold">Blynd: Food Serendipity</h1>
       </div>
 
       <div className="mt-6 text-center text-gray-600">
