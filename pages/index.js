@@ -110,7 +110,7 @@ function Home() {
         if (data.error) {
           toast.error(data.error)
         } else {
-          toast.info('Your feature has been added to the list.')
+          toast.info('Your restaurant has been added to the list.')
           inputNewFeature.current.value = ''
           mutate()
         }
