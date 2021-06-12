@@ -17,7 +17,7 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
   if (isLoading) return null
 
   return isAuthenticated ? (
-    <form className="flex items-center space-x-4" onSubmit={onSubmit}>
+    <form className="flex items-center space-x-4">
       <img src={user.picture} alt={user.name} width={40} className="rounded" />
       <input
         className="input"
@@ -25,6 +25,9 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
         ref={inputNewFeature}
         placeholder="Enter a new restaurant request"
       />
+      <button className="button" type="button" onClick={onSubmit}>
+          Submit
+        </button>
       {isAuthenticated && (
         <button className="button" type="button" onClick={() => logout()}>
           Logout
