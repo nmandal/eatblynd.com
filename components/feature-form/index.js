@@ -28,6 +28,7 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
       <button className="button" type="button" onClick={onSubmit}>
           Submit
         </button>
+      <br />
       {isAuthenticated && (
         <button className="button" type="button" onClick={() => logout()}>
           Logout
