@@ -119,6 +119,9 @@ function Home() {
 
   return (
     <main>
+      <div class="aspect-w-9 aspect-h-16">
+        <iframe src="https://www.youtube.com/embed/8BiPGTcb_GI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
       <FeatureForm
         onSubmitNewFeature={onSubmitNewFeature}
         inputNewFeature={inputNewFeature}
