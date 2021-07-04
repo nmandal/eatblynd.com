@@ -16,15 +16,16 @@ export default function MyApp({ Component, pageProps }) {
     >
       <Head>
         <title>Blynd: Food Serendipity</title>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
 
-      <div className="antialiased max-w-xl mx-auto px-4">
+      {/* <div className="antialiased max-w-xl mx-auto px-4">
         <Header />
-        <main>
+        <main> */}
           <Component {...pageProps} />
-        </main>
+        {/* </main>
         <Footer />
-      </div>
+      </div> */}
 
       <ToastContainer autoClose={3000} hideProgressBar draggable={false} />
     </Auth0Provider>
