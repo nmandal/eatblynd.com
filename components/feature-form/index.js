@@ -36,7 +36,7 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
       )}
     </form>
   ) : (
-    <div className="flex flex-col items-center space-y-2 bg-green-50 text-green-800 px-3 py-6 rounded">
+    <div className="mb-5 flex flex-col items-center space-y-2 bg-green-50 text-green-800 px-3 py-6 rounded">
       <p>Please login to request or vote for a new restaurant</p>
       <button
         className="button bg-green-700"
