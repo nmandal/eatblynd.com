@@ -1,4 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
+import { ExclamationIcon } from '@heroicons/react/solid'
+
 
 export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
   const {
@@ -17,7 +19,7 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
   if (isLoading) return null
 
   return isAuthenticated ? (
-    <form className="flex items-center space-x-4">
+    <form className="mb-10 flex items-center space-x-4">
       <img src={user.picture} alt={user.name} width={40} className="rounded" />
       <input
         className="input"
@@ -36,15 +38,30 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
       )}
     </form>
   ) : (
-    <div className="mb-5 flex flex-col items-center space-y-2 bg-green-50 text-green-800 px-3 py-6 rounded">
-      <p>Please login to request or vote for a new restaurant</p>
-      <button
-        className="button bg-green-700"
-        type="button"
-        onClick={() => loginWithRedirect()}
-      >
-        Login
-      </button>
+    <div className="mb-10 rounded-md bg-yellow-50 p-4">
+      <div className="flex">
+        <div className="flex-shrink-0">
+          <ExclamationIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
+        </div>
+        <div className="ml-3">
+          <h3 className="text-sm font-medium text-yellow-800">Please login</h3>
+          <div className="mt-2 text-sm text-yellow-700">
+            <p>
+              Login to request or upvote a restaurant.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+      <div className="mt-5 sm:mt-6">
+          <button
+            type="button"
+            className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 sm:mt-0 sm:col-start-1 sm:text-sm"
+            onClick={() => loginWithRedirect()}
+          >
+            Login
+          </button>
+        </div>
     </div>
   )
 }
