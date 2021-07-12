@@ -133,6 +133,8 @@ export default function Example() {
     setLoading(true)
     event.preventDefault();
     fetch('api/notify?email=' + notify)
+    toast.success("Thanks! We'll let you know when it's ready.")
+    setNotify('')
     setLoading(false)
   }
 
@@ -144,6 +146,8 @@ export default function Example() {
     setLoading(true)
     event.preventDefault();
     fetch('api/subscribe?email=' + newsletter)
+    toast.success("You're subscribed! Look out for an email.")
+    setNewsletter('')
     setLoading(false)
   }
 
@@ -267,7 +271,7 @@ export default function Example() {
                   <div className="flex items-center flex-1">
                     <div className="flex items-center justify-between w-full md:w-auto">
                       <a href="#">
-                        <span className="sr-only">Workflow</span>
+                        <span className="sr-only">Blynd</span>
                         <img
                           className="h-8 w-auto sm:h-10"
                           src="https://tailwindui.com/img/logos/workflow-mark-teal-200-cyan-400.svg"
