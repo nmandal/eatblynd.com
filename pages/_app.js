@@ -1,7 +1,6 @@
 import './styles.css'
-import 'react-toastify/dist/ReactToastify.css'
 
-import { ToastContainer } from 'react-toastify'
+import { Toaster } from 'react-hot-toast';
 import { Auth0Provider } from '@auth0/auth0-react'
 import Head from 'next/head'
 import Footer from '../components/footer'
@@ -27,7 +26,7 @@ export default function MyApp({ Component, pageProps }) {
         <Footer />
       </div> */}
 
-      <ToastContainer autoClose={3000} hideProgressBar draggable={false} />
+      <Toaster />
     </Auth0Provider>
   )
 }

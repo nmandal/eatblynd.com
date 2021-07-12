@@ -44,8 +44,8 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
           <ExclamationIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />
         </div>
         <div className="ml-3">
-          <h3 className="text-sm font-medium text-yellow-800">Please login</h3>
-          <div className="mt-2 text-sm text-yellow-700">
+          <h3 className="text-lg font-large text-yellow-800">Please login</h3>
+          <div className="mt-2 text-md text-yellow-700">
             <p>
               Login to request or upvote a restaurant.
             </p>
