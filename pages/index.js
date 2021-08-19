@@ -12,7 +12,7 @@
     theme: {
       extend: {
         colors: {
-          teal: colors.teal,
+          cyan: colors.cyan,
           cyan: colors.cyan,
         }
       }
@@ -260,170 +260,170 @@ export default function Example() {
   return (
     <div className="bg-white">
       <div className="relative overflow-hidden">
-        <Popover as="header" className="relative">
-          {({ open }) => (
-            <>
-              <div className="bg-gray-900 pt-6">
-                <nav
-                  className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
-                  aria-label="Global"
-                >
-                  <div className="flex items-center flex-1">
-                    <div className="flex items-center justify-between w-full md:w-auto">
-                      <a href="#">
-                        <span className="sr-only">Blynd</span>
-                        <img
-                          className="h-8 w-auto sm:h-10"
-                          src="https://tailwindui.com/img/logos/workflow-mark-teal-200-cyan-400.svg"
-                          alt=""
-                        />
-                      </a>
-                      <div className="-mr-2 flex items-center md:hidden">
-                        <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
-                          <span className="sr-only">Open main menu</span>
-                          <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                        </Popover.Button>
-                      </div>
-                    </div>
-                    <div className="hidden space-x-8 md:flex md:ml-10">
-                      {navigation.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          target="_blank"
-                          className="text-base font-medium text-white hover:text-gray-300"
-                        >
-                          {item.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </nav>
-              </div>
 
-              <Transition
-                show={open}
-                as={Fragment}
-                enter="duration-150 ease-out"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="duration-100 ease-in"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Popover.Panel
-                  focus
-                  static
-                  className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden"
-                >
-                  <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                    <div className="px-5 pt-4 flex items-center justify-between">
-                      <div>
-                        <img
-                          className="h-8 w-auto"
-                          src="https://tailwindui.com/img/logos/workflow-mark-teal-500-cyan-600.svg"
-                          alt=""
-                        />
-                      </div>
-                      <div className="-mr-2">
-                        <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
-                          <span className="sr-only">Close menu</span>
-                          <XIcon className="h-6 w-6" aria-hidden="true" />
-                        </Popover.Button>
-                      </div>
-                    </div>
-                    <div className="pt-5 pb-6">
-                      <div className="px-2 space-y-1">
-                        {navigation.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            target="_blank"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
-                          >
-                            {item.name}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </Popover.Panel>
-              </Transition>
-            </>
-          )}
-        </Popover>
         <main>
-          <div className="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
-            <div className="mx-auto max-w-7xl lg:px-8">
-              <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-                <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
-                  <div className="lg:py-24">
-                    <a
-                      href="https://app.eatblynd.com/join"
-                      className="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
-                      target="_blank"
-                    >
-                      <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
-                        Restaurants
-                      </span>
-                      <span className="ml-4 text-sm">Use Blynd at your business</span>
-                      <ChevronRightIcon className="ml-2 w-5 h-5 text-gray-500" aria-hidden="true" />
-                    </a>
-                    <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                      <span className="block">A better way to</span>
-                      <span className="pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 sm:pb-5">
-                        order food online
-                      </span>
-                    </h1>
-                    <p className="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">
-                      Restaurants only serve one dish at a time. It is unknown to customers and can change at any time. Take the plunge into food serendipity today.
-                    </p>
-                    <div className="mt-10 sm:mt-12">
-                      <form onSubmit={addNotify} className="sm:max-w-xl sm:mx-auto lg:mx-0">
-                        <div className="sm:flex">
-                          <div className="min-w-0 flex-1">
-                            <label htmlFor="email" className="sr-only">
-                              Email address
-                            </label>
-                            <input
-                              id="email"
-                              type="email"
-                              placeholder="Enter your email"
-                              onChange={changeNotifyHandler}
-                              className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
-                            />
-                          </div>
-                          <div className="mt-3 sm:mt-0 sm:ml-3">
-                            <button
-                              type="submit"
-                              className="block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
-                            >
-                              Notify me
-                            </button>
-                          </div>
-                        </div>
-                        <p className="mt-3 text-sm text-gray-300 sm:mt-4">
-                          We care about the protection of your data. Read
-                          our{' '}
-                          <a href="#" className="font-medium text-white">
-                            Privacy Policy
-                          </a>
-                          .
-                        </p>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-12 lg:m-0 lg:relative">
-                  <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-                    <div className="aspect-w-9 aspect-h-13">
-                        <iframe src="https://www.youtube.com/embed/8BiPGTcb_GI" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+        <div className="relative bg-gray-50 overflow-hidden">
+      <div className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full" aria-hidden="true">
+        <div className="relative h-full max-w-7xl mx-auto">
+          <svg
+            className="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2"
+            width={404}
+            height={784}
+            fill="none"
+            viewBox="0 0 404 784"
+          >
+            <defs>
+              <pattern
+                id="f210dbf6-a58d-4871-961e-36d5016a0f49"
+                x={0}
+                y={0}
+                width={20}
+                height={20}
+                patternUnits="userSpaceOnUse"
+              >
+                <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width={404} height={784} fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
+          </svg>
+          <svg
+            className="absolute left-full transform -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2"
+            width={404}
+            height={784}
+            fill="none"
+            viewBox="0 0 404 784"
+          >
+            <defs>
+              <pattern
+                id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b"
+                x={0}
+                y={0}
+                width={20}
+                height={20}
+                patternUnits="userSpaceOnUse"
+              >
+                <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width={404} height={784} fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
+          </svg>
+        </div>
+      </div>
+
+      <div className="relative pt-6 pb-16 sm:pb-24">
+        <Popover>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <nav className="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+              <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+                <div className="flex items-center justify-between w-full md:w-auto">
+                  <a href="#">
+                    <span className="sr-only">Workflow</span>
+                    <img
+                      className="h-8 w-auto sm:h-10"
+                      src="https://tailwindui.com/img/logos/workflow-mark-cyan-600.svg"
+                      alt=""
+                    />
+                  </a>
+                  <div className="-mr-2 flex items-center md:hidden">
+                    <Popover.Button className="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500">
+                      <span className="sr-only">Open main menu</span>
+                      <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                    </Popover.Button>
                   </div>
                 </div>
               </div>
-            </div>
+              <div className="hidden md:flex md:space-x-10">
+                {navigation.map((item) => (
+                  <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </nav>
           </div>
+
+          <Transition
+            as={Fragment}
+            enter="duration-150 ease-out"
+            enterFrom="opacity-0 scale-95"
+            enterTo="opacity-100 scale-100"
+            leave="duration-100 ease-in"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          >
+            <Popover.Panel
+              focus
+              className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+            >
+              <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                <div className="px-5 pt-4 flex items-center justify-between">
+                  <div>
+                    <img
+                      className="h-8 w-auto"
+                      src="https://tailwindui.com/img/logos/workflow-mark-cyan-600.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div className="-mr-2">
+                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500">
+                      <span className="sr-only">Close menu</span>
+                      <XIcon className="h-6 w-6" aria-hidden="true" />
+                    </Popover.Button>
+                  </div>
+                </div>
+                <div className="px-2 pt-2 pb-3">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </Popover.Panel>
+          </Transition>
+        </Popover>
+
+        <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+          <div className="text-center">
+            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+              <span className="block xl:inline">Order blindly from your</span>{' '}
+              <span className="block text-cyan-600 xl:inline">favorite restaurants</span>
+            </h1>
+            <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+              Restaurants serve one dish at a time. It's unknown to customers and can change at any time. Blynd invites you to experience local cuisine without the hassle.
+            </p>
+          </div>
+
+          
+          <form action="#" className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+                <div className="min-w-0 flex-1">
+                  
+                  <label htmlFor="cta-email" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    id="cta-email"
+                    type="email"
+                    className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-600"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div className="mt-4 sm:mt-0 sm:ml-3">
+                  <button
+                    type="submit"
+                    className="block w-full rounded-md border border-transparent px-5 py-3 bg-cyan-500 text-base font-medium text-white shadow hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-600 sm:px-10"
+                  >
+                    Notify me
+                  </button>
+                </div>
+              </form>
+        </main>
+      </div>
+    </div>
 
           {/* Feature section with grid */}
           <div className="relative bg-white py-16 sm:py-24 lg:py-32">
@@ -452,98 +452,64 @@ export default function Example() {
               </div>
           </div>
         </main>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-x-6 xl:gap-x-8">
+              <div className="bg-gray-100 rounded-lg p-6 flex items-center sm:p-10">
+                <div className="max-w-sm mx-auto">
+                  <h3 className="font-semibold text-gray-900">Sign up for our newsletter</h3>
+                  <p className="mt-2 text-sm text-gray-500">
+                    The latest news, articles, and resources, sent to your inbox weekly.
+                  </p>
+                  <form className="mt-4 sm:mt-6 sm:flex">
+                    <label htmlFor="email-address" className="sr-only">
+                      Email address
+                    </label>
+                    <input
+                      id="email-address"
+                      type="text"
+                      autoComplete="email"
+                      required
+                      className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+                    />
+                    <div className="mt-3 sm:flex-shrink-0 sm:mt-0 sm:ml-4">
+                      <button
+                        type="submit"
+                        className="w-full bg-cyan-600 border border-transparent rounded-md shadow-sm py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-cyan-500"
+                      >
+                        Sign up
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div className="mt-6 relative py-12 px-6 flex items-center sm:py-16 sm:px-10 lg:mt-0">
+                <div className="absolute inset-0 rounded-lg overflow-hidden">
+                  <img
+                    src="https://tailwindui.com/img/ecommerce-images/footer-02-exclusive-sale.jpg"
+                    alt=""
+                    className="w-full h-full filter saturate-0 object-center object-cover"
+                  />
+                  <div className="absolute inset-0 bg-cyan-600 bg-opacity-90" />
+                </div>
+                <div className="relative max-w-sm mx-auto text-center">
+                  <h3 className="text-2xl font-extrabold tracking-tight text-white">Get early access</h3>
+                  <p className="mt-2 text-gray-200">
+                    Did you sign up to the newsletter? If so, use the keyword we sent you to get access.{' '}
+                    <a href="#" className="font-bold text-white whitespace-nowrap hover:text-gray-200">
+                      Go now<span aria-hidden="true"> &rarr;</span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            </div>
         <footer className="bg-white" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Solutions</h3>
-                <ul className="mt-4 space-y-4">
-                  {footerNavigation.solutions.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
-                <ul className="mt-4 space-y-4">
-                  {footerNavigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div> */}
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              {/* <div>
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
-                <ul className="mt-4 space-y-4">
-                  {footerNavigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div> */}
-              {/* <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
-                <ul className="mt-4 space-y-4">
-                  {footerNavigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div> */}
-            </div>
-          </div>
-          <div className="mt-8 xl:mt-0">
-            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-              Subscribe to our newsletter
-            </h3>
-            <p className="mt-4 text-base text-gray-500">
-              The latest news, articles, and resources, sent to your inbox weekly.
-            </p>
-            <form onSubmit={addNewsletter} className="mt-4 sm:flex sm:max-w-md">
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                type="email"
-                name="email-address"
-                id="email-address"
-                autoComplete="email"
-                onChange={changeNewsletterHandler}
-                required
-                className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 focus:placeholder-gray-400"
-                placeholder="Enter your email"
-              />
-              <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                <button
-                  type="submit"
-                  className="w-full bg-cyan-600 flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white hover:bg-cyan-700 focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+        
         <div className="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {footerNavigation.social.map((item) => (
