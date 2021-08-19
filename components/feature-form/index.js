@@ -19,7 +19,7 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
   if (isLoading) return null
 
   return isAuthenticated ? (
-    <form className="mb-10 flex items-center space-x-4">
+    <form className="mb-5 flex items-center space-x-4">
       <img src={user.picture} alt={user.name} width={40} className="rounded" />
       <input
         className="input"
@@ -32,7 +32,7 @@ export default function FeatureForm({ onSubmitNewFeature, inputNewFeature }) {
         </button>
     </form>
   ) : (
-    <div className="mb-10 rounded-md bg-yellow-50 p-4">
+    <div className="mb-5 rounded-md bg-yellow-50 p-4">
       <div className="flex">
         <div className="flex-shrink-0">
           <ExclamationIcon className="h-5 w-5 text-yellow-400" aria-hidden="true" />

@@ -70,7 +70,7 @@ export default function FeatureList({
       {/* RELEASED RESTAURANT LIST */}
 
       {RELEASED_DATA.length > 0 && (
-        <div className="mt-10">
+        <div className="mt-5">
           <h2 className="font-bold">Released</h2>
           <div className="mt-4 space-y-2">
             {RELEASED_DATA.map((item, index) => (

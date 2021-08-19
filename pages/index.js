@@ -38,7 +38,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 import { ChevronRightIcon, ExternalLinkIcon } from '@heroicons/react/solid'
-
+import { BadgeCheckIcon, CalendarIcon, TruckIcon } from '@heroicons/react/outline'
 import toast from 'react-hot-toast';
 import { useRef } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -48,6 +48,72 @@ import useSWR from 'swr'
 import { FEATURE_TYPE } from '../lib/const'
 import {useEffect, useState} from "react";
 
+const posts = [
+  {
+    title: 'Boost your conversion rate',
+    href: '#',
+    category: { name: 'Article', href: '#' },
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+    date: 'Mar 16, 2020',
+    datetime: '2020-03-16',
+    imageUrl:
+      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '6 min',
+    author: {
+      name: 'Roel Aufderehar',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    title: 'How to use search engine optimization to drive sales',
+    href: '#',
+    category: { name: 'Video', href: '#' },
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+    date: 'Mar 10, 2020',
+    datetime: '2020-03-10',
+    imageUrl:
+      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '4 min',
+    author: {
+      name: 'Brenna Goyette',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    title: 'Improve your customer experience',
+    href: '#',
+    category: { name: 'Case Study', href: '#' },
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+    date: 'Feb 12, 2020',
+    datetime: '2020-02-12',
+    imageUrl:
+      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '11 min',
+    author: {
+      name: 'Daniela Metz',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+]
+
+const incentivess = [
+  { name: 'Free, contactless delivery', icon: TruckIcon },
+  { name: 'No questions asked returns', icon: BadgeCheckIcon },
+  { name: '2-year warranty', icon: CalendarIcon },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 const navigation = [
   { name: 'Get Early Access', href: 'https://app.eatblynd.com' },
@@ -399,7 +465,7 @@ export default function Example() {
           </div>
 
           
-          <form action="#" className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+          <form onSubmit={addNotify} className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
                 <div className="min-w-0 flex-1">
                   
                   <label htmlFor="cta-email" className="sr-only">
@@ -408,6 +474,7 @@ export default function Example() {
                   <input
                     id="cta-email"
                     type="email"
+                    onChange={changeNotifyHandler}
                     className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-600"
                     placeholder="Enter your email"
                   />
@@ -417,13 +484,14 @@ export default function Example() {
                     type="submit"
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-cyan-500 text-base font-medium text-white shadow hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-600 sm:px-10"
                   >
-                    Notify me
+                    Get early access
                   </button>
                 </div>
               </form>
         </main>
       </div>
     </div>
+
 
           {/* Feature section with grid */}
           <div className="relative bg-white py-16 sm:py-24 lg:py-32">
@@ -452,6 +520,64 @@ export default function Example() {
               </div>
           </div>
         </main>
+
+        {/* <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+      <div className="absolute inset-0">
+        <div className="bg-white h-1/3 sm:h-2/3" />
+      </div>
+      <div className="relative max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">From the blog</h2>
+          <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
+          </p>
+        </div>
+        <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+          {posts.map((post) => (
+            <div key={post.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+              <div className="flex-shrink-0">
+                <img className="h-48 w-full object-cover" src={post.imageUrl} alt="" />
+              </div>
+              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-cyan-600">
+                    <a href={post.category.href} className="hover:underline">
+                      {post.category.name}
+                    </a>
+                  </p>
+                  <a href={post.href} className="block mt-2">
+                    <p className="text-xl font-semibold text-gray-900">{post.title}</p>
+                    <p className="mt-3 text-base text-gray-500">{post.description}</p>
+                  </a>
+                </div>
+                <div className="mt-6 flex items-center">
+                  <div className="flex-shrink-0">
+                    <a href={post.author.href}>
+                      <span className="sr-only">{post.author.name}</span>
+                      <img className="h-10 w-10 rounded-full" src={post.author.imageUrl} alt="" />
+                    </a>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm font-medium text-gray-900">
+                      <a href={post.author.href} className="hover:underline">
+                        {post.author.name}
+                      </a>
+                    </p>
+                    <div className="flex space-x-1 text-sm text-gray-500">
+                      <time dateTime={post.datetime}>{post.date}</time>
+                      <span aria-hidden="true">&middot;</span>
+                      <span>{post.readingTime} read</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div> */}
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-6 xl:gap-x-8">
               <div className="bg-gray-100 rounded-lg p-6 flex items-center sm:p-10">
@@ -460,7 +586,7 @@ export default function Example() {
                   <p className="mt-2 text-sm text-gray-500">
                     The latest news, articles, and resources, sent to your inbox weekly.
                   </p>
-                  <form className="mt-4 sm:mt-6 sm:flex">
+                  <form onSubmit={addNewsletter} className="mt-4 sm:mt-6 sm:flex">
                     <label htmlFor="email-address" className="sr-only">
                       Email address
                     </label>
@@ -469,6 +595,8 @@ export default function Example() {
                       type="text"
                       autoComplete="email"
                       required
+                      onChange={changeNewsletterHandler}
+                      placeholder="Enter your email"
                       className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
                     />
                     <div className="mt-3 sm:flex-shrink-0 sm:mt-0 sm:ml-4">
@@ -496,7 +624,7 @@ export default function Example() {
                   <h3 className="text-2xl font-extrabold tracking-tight text-white">Get early access</h3>
                   <p className="mt-2 text-gray-200">
                     Did you sign up to the newsletter? If so, use the keyword we sent you to get access.{' '}
-                    <a href="#" className="font-bold text-white whitespace-nowrap hover:text-gray-200">
+                    <a href="https://blynd.substack.com" className="font-bold text-white whitespace-nowrap hover:text-gray-200">
                       Go now<span aria-hidden="true"> &rarr;</span>
                     </a>
                   </p>
