@@ -116,13 +116,11 @@ function classNames(...classes) {
 }
 
 const navigation = [
-  { name: 'Get Early Access', href: 'https://app.eatblynd.com' },
   { name: 'Become a Restaurant Partner', href: 'https://app.eatblynd.com/join/' },
 ]
 
 const footerNavigation = {
   solutions: [
-    { name: 'Get Early Access', href: 'https://app.eatblynd.com' },
     { name: 'Become a Restaurant Partner', href: 'https://app.eatblynd.com/join/' },
   ],
   support: [
@@ -485,7 +483,7 @@ export default function Example() {
                     type="submit"
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-cyan-500 text-base font-medium text-white shadow hover:bg-cyan-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-600 sm:px-10"
                   >
-                    Get early access
+                    Join waiting list
                   </button>
                 </div>
               </form>
@@ -622,7 +620,7 @@ export default function Example() {
                   <div className="absolute inset-0 bg-cyan-600 bg-opacity-90" />
                 </div>
                 <div className="relative max-w-sm mx-auto text-center">
-                  <h3 className="text-2xl font-extrabold tracking-tight text-white">Get early access</h3>
+                  <h3 className="text-2xl font-extrabold tracking-tight text-white">Join waiting list</h3>
                   <p className="mt-2 text-gray-200">
                     Did you sign up to the newsletter? If so, use the keyword we sent you to get access.{' '}
                     <a href="https://blynd.substack.com" className="font-bold text-white whitespace-nowrap hover:text-gray-200">
