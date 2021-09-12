@@ -500,7 +500,7 @@ export default function Example() {
                 Restaurant Roadmap
               </p>
               <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-                Help us by submitting and upvoting restaurants you want to see on the platform.
+                Help us by submitting and upvoting restaurants you want to see on the platform. If the restaurant you request joins Blynd, your first meal is on us!
               </p>
               
             </div>
