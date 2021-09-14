@@ -57,6 +57,23 @@ export default function Example() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0()
   const inputNewFeature = useRef()
 
+  async function addSubscriber (email) {
+    // The location of your API route
+    const url = '/api/subscribe'
+      
+    const { data, error } = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({ email })
+    }).then(res => res.json())
+      
+    if (error) {
+      console.log('Error:', error)
+      return
+    }
+      
+    console.log('Success:', data)
+  }
+
   const { data, isValidating, mutate } = useSWR('api/list', {
     initialData: { [FEATURE_TYPE.NEW]: [], [FEATURE_TYPE.RELEASED]: [] },
     revalidateOnMount: true,
@@ -305,7 +322,7 @@ export default function Example() {
           </div>
 
           
-          <form onSubmit={subscribe} className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+          <form onSubmit={addSubscriber} className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
                 <div className="min-w-0 flex-1">
                   
                   <label htmlFor="cta-email" className="sr-only">
@@ -314,7 +331,6 @@ export default function Example() {
                   <input
                     id="cta-email"
                     type="email"
-                    ref={inputEl}
                     className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-600"
                     placeholder="Enter your email"
                     required
@@ -371,7 +387,7 @@ export default function Example() {
                   <p className="mt-2 text-sm text-gray-500">
                     The latest news, articles, and resources, sent to your inbox weekly.
                   </p>
-                  <form onSubmit={subscribe} className="mt-4 sm:mt-6 sm:flex">
+                  <form onSubmit={addSubscriber} className="mt-4 sm:mt-6 sm:flex">
                     <label htmlFor="email-address" className="sr-only">
                       Email address
                     </label>
@@ -380,7 +396,6 @@ export default function Example() {
                       type="text"
                       autoComplete="email"
                       required
-                      ref={inputEl}
                       placeholder="Enter your email"
                       className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
                     />
