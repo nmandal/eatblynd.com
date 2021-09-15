@@ -58,7 +58,6 @@ export default function Example() {
   const inputNewFeature = useRef()
 
   async function addSubscriber (email) {
-    preventDefault()
     // The location of your API route
     const url = '/api/subscribe'
       
