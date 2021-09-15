@@ -6,6 +6,8 @@ export default async function handler(req, res) {
       return res.status(400).json({error: 'No email submitted.'});
   }
 
+  console.log(email)
+
   // 2. Use the Revue API Key and create a subscriber using
   // the email we pass to the API. Please note, we pass the
   // API Key in the 'Authorization' header.
@@ -22,6 +24,8 @@ export default async function handler(req, res) {
               }
           }
       )
+      console.log(API_KEY)
+      console.log(response)
   
   // 3. We check in the response if the status is 400
   // If so, consider it as error and return. Otherwise a 201
