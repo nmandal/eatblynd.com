@@ -294,7 +294,7 @@ export default function Example() {
                   </div>
                 </div>
                 <div className="px-2 pt-2 pb-3">
-                  {nav.solutions.map((item) => (
+                  {footerNavigation.solutions.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
