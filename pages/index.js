@@ -59,6 +59,9 @@ export default function Example() {
 
   const addSubscriber = async event => {
       event.preventDefault()
+
+      console.log(event)
+      console.log(event.target.email)
       
       const { data, error } = await fetch('/api/register', {
         body: JSON.stringify({
@@ -68,8 +71,13 @@ export default function Example() {
           'Content-Type': 'application/json'
         },
         method: 'POST'
-      }).then(res => res.json())
+      })
+      
+      console.log(data)
+      console.log(error)
+      const res = await data.json()
 
+      console.log(res)
       if (error) {
         console.log('Error:', error)
         return
