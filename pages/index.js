@@ -330,11 +330,11 @@ export default function Example() {
           <form onSubmit={addSubscriber} className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
                 <div className="min-w-0 flex-1">
                   
-                  <label htmlFor="cta-email" className="sr-only">
+                  <label htmlFor="email" className="sr-only">
                     Email address
                   </label>
                   <input
-                    id="cta-email"
+                    id="email"
                     type="email"
                     className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-600"
                     placeholder="Enter your email"
@@ -393,11 +393,11 @@ export default function Example() {
                     The latest news, articles, and resources, sent to your inbox weekly.
                   </p>
                   <form onSubmit={addSubscriber} className="mt-4 sm:mt-6 sm:flex">
-                    <label htmlFor="email-address" className="sr-only">
+                    <label htmlFor="email" className="sr-only">
                       Email address
                     </label>
                     <input
-                      id="email-address"
+                      id="email"
                       type="text"
                       autoComplete="email"
                       required
