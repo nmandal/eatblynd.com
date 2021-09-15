@@ -57,34 +57,23 @@ export default function Example() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0()
   const inputNewFeature = useRef()
 
-  const addSubscriber = async event => {
-      event.preventDefault()
-
-      console.log(event)
-      console.log(event.target.email)
+  async function addSubscriber (email) {
+    preventDefault()
+    // The location of your API route
+    const url = '/api/subscribe'
       
-      const { data, error } = await fetch('/api/subscribe', {
-        body: JSON.stringify({
-          name: event.target.email.value
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: 'POST'
-      })
+    const { data, error } = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({ email })
+    }).then(res => res.json())
       
-      console.log(data)
-      console.log(error)
-      const res = await data.json()
-
-      console.log(res)
-      if (error) {
-        console.log('Error:', error)
-        return
-      }
-
-      toast.success("You're on the list! Look out for an email :)")
+    if (error) {
+      console.log('Error:', error)
+      return
     }
+      
+    toast.success('Success:')
+  }
 
 
   const { data, isValidating, mutate } = useSWR('api/list', {
