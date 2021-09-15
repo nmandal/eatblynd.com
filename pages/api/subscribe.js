@@ -15,7 +15,7 @@ export default async function handler(req, res) {
           `https://www.getrevue.co/api/v2/subscribers`,
           {
               method: 'POST',
-              body: JSON.stringify({email: email, double_opt_in: false}),
+              body: JSON.stringify({email: email}),
               headers: {
                   'Authorization': `Token ${API_KEY}`,
                   'Content-Type': 'application/json'
