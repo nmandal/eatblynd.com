@@ -71,7 +71,7 @@ export default function Example() {
     }
       
     console.log('Success:', data)
-  })
+  }
 
   const { data, isValidating, mutate } = useSWR('api/list', {
     initialData: { [FEATURE_TYPE.NEW]: [], [FEATURE_TYPE.RELEASED]: [] },
