@@ -57,8 +57,7 @@ export default function Example() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0()
   const inputNewFeature = useRef()
 
-  async function addSubscriber (email) {
-    // The location of your API route
+  const subscribe = addSubscriber(async (email) => {
     const url = '/api/subscribe'
       
     const { data, error } = await fetch(url, {
@@ -72,7 +71,7 @@ export default function Example() {
     }
       
     console.log('Success:', data)
-  }
+  })
 
   const { data, isValidating, mutate } = useSWR('api/list', {
     initialData: { [FEATURE_TYPE.NEW]: [], [FEATURE_TYPE.RELEASED]: [] },
@@ -322,7 +321,7 @@ export default function Example() {
           </div>
 
           
-          <form onSubmit={addSubscriber} className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+          <form onSubmit={subscribe} className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
                 <div className="min-w-0 flex-1">
                   
                   <label htmlFor="cta-email" className="sr-only">
@@ -387,7 +386,7 @@ export default function Example() {
                   <p className="mt-2 text-sm text-gray-500">
                     The latest news, articles, and resources, sent to your inbox weekly.
                   </p>
-                  <form onSubmit={addSubscriber} className="mt-4 sm:mt-6 sm:flex">
+                  <form onSubmit={subscribe} className="mt-4 sm:mt-6 sm:flex">
                     <label htmlFor="email-address" className="sr-only">
                       Email address
                     </label>
