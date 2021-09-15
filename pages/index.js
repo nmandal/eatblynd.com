@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import toast from 'react-hot-toast';
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import FeatureList from '../components/feature-list'
 import FeatureForm from '../components/feature-form'
