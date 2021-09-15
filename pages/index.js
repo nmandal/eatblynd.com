@@ -255,7 +255,7 @@ export default function Example() {
                 </div>
               </div>
               <div className="hidden md:flex md:space-x-10">
-                {navigation.solutions.map((item) => (
+                {footerNavigation.solutions.map((item) => (
                   <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
                     {item.name}
                   </a>
