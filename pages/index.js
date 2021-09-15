@@ -63,7 +63,7 @@ export default function Example() {
       console.log(event)
       console.log(event.target.email)
       
-      const { data, error } = await fetch('/api/register', {
+      const { data, error } = await fetch('/api/subscribe', {
         body: JSON.stringify({
           name: event.target.email.value
         }),
