@@ -62,6 +62,8 @@ export default function Example() {
 
   const notifySubscriber = async event => {
     event.preventDefault()
+
+    console.log(notify)
     
     const { data, error } = await fetch('/api/subscribe', {
       body: JSON.stringify({notify}),
@@ -83,6 +85,8 @@ export default function Example() {
 
   const newsletterSubsctiber = async event => {
     event.preventDefault()
+
+    console.log(newsletter)
     
     const { data, error } = await fetch('/api/subscribe', {
       body: JSON.stringify({newsletter}),
