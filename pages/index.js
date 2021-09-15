@@ -57,22 +57,30 @@ export default function Example() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0()
   const inputNewFeature = useRef()
 
-  async function subscribe (email) {
-    const url = '/api/subscribe'
+  function subcribe() {
+    const addSubscriber = async event => {
+      event.preventDefault()
       
-    const { data, error } = await fetch(url, {
-      method: 'POST',
-      body: JSON.stringify({ email })
-    }).then(res => res.json())
-      
-    if (error) {
-      console.log('Error:', error)
-      return
+      const { data, error } = await fetch('/api/register', {
+        body: JSON.stringify({
+          name: event.target.email.value
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      }).then(res => res.json())
+
+      if (error) {
+        console.log('Error:', error)
+        return
+      }
+
+      toast.success("You're on the list! Look out for an email :)")
     }
-      
-    console.log('Success:', data)
   }
 
+  
   const { data, isValidating, mutate } = useSWR('api/list', {
     initialData: { [FEATURE_TYPE.NEW]: [], [FEATURE_TYPE.RELEASED]: [] },
     revalidateOnMount: true,
@@ -321,7 +329,7 @@ export default function Example() {
           </div>
 
           
-          <form onSubmit={subscribe} className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+          <form onSubmit={addSubscriber} className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
                 <div className="min-w-0 flex-1">
                   
                   <label htmlFor="cta-email" className="sr-only">
@@ -386,7 +394,7 @@ export default function Example() {
                   <p className="mt-2 text-sm text-gray-500">
                     The latest news, articles, and resources, sent to your inbox weekly.
                   </p>
-                  <form onSubmit={subscribe} className="mt-4 sm:mt-6 sm:flex">
+                  <form onSubmit={addSubscriber} className="mt-4 sm:mt-6 sm:flex">
                     <label htmlFor="email-address" className="sr-only">
                       Email address
                     </label>
