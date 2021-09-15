@@ -4,6 +4,7 @@ const secret = process.env.REVUE_SECRET_KEY
 export default async function (req, res) {
   console.log(req.body)
   const { email } = req.body
+  console.log(email)
 	
   if (!email) {
     res.status(400).json({ error: 'No email submitted' })
@@ -15,7 +16,7 @@ export default async function (req, res) {
     headers: {
       Authorization: `Token ${secret}`
     },
-    body: JSON.stringify({email: email})
+    body: JSON.stringify({email})
   })
 
   console.log(result)
