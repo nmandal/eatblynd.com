@@ -57,7 +57,7 @@ export default function Example() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0()
   const inputNewFeature = useRef()
 
-  const subscribe = addSubscriber(async (email) => {
+  async function subscribe (email) {
     const url = '/api/subscribe'
       
     const { data, error } = await fetch(url, {
