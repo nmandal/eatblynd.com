@@ -1,5 +1,3 @@
-import FormData from 'form-data'
-	
 const url = 'https://www.getrevue.co/api/v2/subscribers'
 const secret = process.env.REVUE_SECRET_KEY
 	
