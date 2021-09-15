@@ -5,7 +5,7 @@ const url = 'https://www.getrevue.co/api/v2/subscribers'
 const secret = process.env.REVUE_SECRET_KEY
 	
 export default async function (req, res) {
-  console.log(req)
+  console.log(req.body)
   const { email } = JSON.parse(req.body)
 	
   if (!email) {
@@ -24,7 +24,9 @@ export default async function (req, res) {
     },
     body: formData
   })
-  const data = await result.json()
+
+  console.log(result)
+  //const data = await result.json()
 	
   if (!result.ok) {
     res.status(500).json({ error: data.error.email[0] })
