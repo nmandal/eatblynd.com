@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   // 1. Get the email from the payload and
   // validate if it is empty.
-  const { email } = req.body;
+  const { email, double_opt_in } = req.body;
   if (!email) {
       return res.status(400).json({error: 'No email submitted.'});
   }
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
           `https://www.getrevue.co/api/v2/subscribers`,
           {
               method: 'POST',
-              body: JSON.stringify({email: email}),
+              body: JSON.stringify({email: email, double_opt_in: double_opt_in}),
               headers: {
                   'Authorization': `Token ${API_KEY}`,
                   'Content-Type': 'application/json'

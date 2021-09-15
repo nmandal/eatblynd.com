@@ -64,13 +64,10 @@ export default function Example() {
     event.preventDefault()
     
     const { data, error } = await fetch('/api/subscribe', {
-      body: JSON.stringify({email: notify}),
+      body: JSON.stringify({email: notify, double_opt_in: false}),
       method: "POST",
       headers: {'Content-Type': 'application/json'}
     })
-
-    console.log(data)
-    console.log(error)
 
     if (error) {
       console.log('Error:', error)
@@ -85,7 +82,7 @@ export default function Example() {
     event.preventDefault()
     
     const { data, error } = await fetch('/api/subscribe', {
-      body: JSON.stringify({email: newsletter}),
+      body: JSON.stringify({email: newsletter, double_opt_in: true}),
       method: "POST",
       headers: {'Content-Type': 'application/json'}
     })
