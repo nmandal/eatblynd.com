@@ -57,8 +57,7 @@ export default function Example() {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0()
   const inputNewFeature = useRef()
 
-  function subcribe() {
-    const addSubscriber = async event => {
+  const addSubscriber = async event => {
       event.preventDefault()
       
       const { data, error } = await fetch('/api/register', {
@@ -78,9 +77,8 @@ export default function Example() {
 
       toast.success("You're on the list! Look out for an email :)")
     }
-  }
 
-  
+
   const { data, isValidating, mutate } = useSWR('api/list', {
     initialData: { [FEATURE_TYPE.NEW]: [], [FEATURE_TYPE.RELEASED]: [] },
     revalidateOnMount: true,
