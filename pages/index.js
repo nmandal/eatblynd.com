@@ -60,6 +60,8 @@ export default function Example() {
   async function addSubscriber (email) {
     // The location of your API route
     const url = '/api/subscribe'
+
+    console.log(email)
       
     const { data, error } = await fetch(url, {
       method: 'POST',
