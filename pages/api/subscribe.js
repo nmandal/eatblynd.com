@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   // the email we pass to the API. Please note, we pass the
   // API Key in the 'Authorization' header.
   try {
-      const API_KEY = process.env.REVUE_API_KEY;
+      const API_KEY = process.env.REVUE_SECRET_KEY;
       const response = await fetch(
           `https://www.getrevue.co/api/v2/subscribers`,
           {
