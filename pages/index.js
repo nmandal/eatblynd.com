@@ -67,7 +67,10 @@ export default function Example() {
       body: JSON.stringify({notify}),
       method: "POST",
       headers: {'Content-Type': 'application/json'}
-    }).then(res => res.json())
+    })
+
+    console.log(data)
+    console.log(error)
 
     if (error) {
       console.log('Error:', error)
