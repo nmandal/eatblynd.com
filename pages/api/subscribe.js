@@ -19,7 +19,7 @@ export default async function (req, res) {
   })
 
   console.log(result)
-  //const data = await result.json()
+  const data = await result.json()
 	
   if (!result.ok) {
     res.status(500).json({ error: data.error.email[0] })
