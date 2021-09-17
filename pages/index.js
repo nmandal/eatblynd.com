@@ -36,19 +36,6 @@ const footerNavigation = {
         </svg>
       ),
     },
-    {
-      name: 'Facebook',
-      href: 'https://www.facebook.com/eatblynd',
-      icon: (props) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
   ],
 }
 
@@ -412,7 +399,7 @@ export default function Example() {
                 <div className="max-w-sm mx-auto">
                   <h3 className="font-semibold text-gray-900">Sign up for our newsletter</h3>
                   <p className="mt-2 text-sm text-gray-500">
-                    The latest news, articles, and resources, sent to your inbox weekly.
+                    The first place we send restaurant reviews, recommendations, and curated menus, sent to your inbox weekly.
                   </p>
                   <form onSubmit={newsletterSubsctiber} className="mt-4 sm:mt-6 sm:flex">
                     <label htmlFor="email" className="sr-only">
@@ -450,9 +437,9 @@ export default function Example() {
                   <div className="absolute inset-0 bg-cyan-600 bg-opacity-90" />
                 </div>
                 <div className="relative max-w-sm mx-auto text-center">
-                  <h3 className="text-2xl font-extrabold tracking-tight text-white">Join waiting list</h3>
+                  <h3 className="text-2xl font-extrabold tracking-tight text-white">Jump waiting list</h3>
                   <p className="mt-2 text-gray-200">
-                    Did you sign up to the newsletter? If so, use the keyword we sent you to get access.{' '}
+                    Did you sign up to the newsletter? Subscribers get priority access to the launch.{' '}
                     <a target="_blank" href="https://www.getrevue.co/profile/blynd" className="font-bold text-white whitespace-nowrap hover:text-gray-200">
                       Go now<span aria-hidden="true"> &rarr;</span>
                     </a>
