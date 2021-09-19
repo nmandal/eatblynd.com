@@ -4,14 +4,14 @@ import {
 } from '@heroicons/react/outline'
 
 const features = [
-  'Receive valuable feedback from your power customers',
-  'Multi channel ordering from QR code and online',
+  'Receive valuable feedback from your repeat customers',
   'Add-ons at the time of ordering such as wine pairings and cookbooks',
-  'Save on food costs by serving the identical meals at volume',
+  'Save on food costs by serving identical meals at volume',
   'Save on labor costs with one serving time',
   'Give your chefs a built-in development kitchen',
-  'Customer acquisition through community development',
+  'Test new recipes and changes to existing favorites',
   'Turn your customers into ambassadors',
+  'Multi channel ordering from QR code and online',
   'Boost loyalty and engagement',
   'Manage orders with phone or tablet',
   'No hidden fees',
@@ -97,11 +97,11 @@ export default function Example() {
           <div className="pb-16 xl:flex xl:items-center xl:justify-between">
             <div>
               <h1 className="text-4xl font-extrabold sm:text-5xl sm:tracking-tight">
-                <span className="text-gray-900">What you need to </span>
+                <span className="text-gray-900">A fresh take on ordering to </span>
                 <span className="text-cyan-600">build your following</span>
               </h1>
               <p className="mt-5 text-xl text-gray-500">
-                For restaurants who want to experiement and give their customers a unique, elevated dining experience
+                For restaurants who want to experiment and give their customers a unique dining experience
               </p>
             </div>
             <a
@@ -114,10 +114,10 @@ export default function Example() {
           </div>
           <div className="border-t border-gray-200 pt-16 xl:grid xl:grid-cols-3 xl:gap-x-8">
             <div>
-              <h2 className="text-base font-semibold text-cyan-600 uppercase tracking-wide">Everything you need</h2>
-              <p className="mt-2 text-3xl font-extrabold text-gray-900">New pickup platform</p>
+              <h2 className="text-base font-semibold text-cyan-600 uppercase tracking-wide">Drop new meals & reinvent old favorites</h2>
+              <p className="mt-2 text-3xl font-extrabold text-gray-900">Your unique take on food</p>
               <p className="mt-4 text-lg text-gray-500">
-              Blynd gives you the tools you need to experiment in the kitchen, engage with your favorite customers, and build your brand.
+              Blynd gives you the tools you need to craft new recipes, engage with customers, and build your brand.
               </p>
             </div>
             <div className="mt-4 sm:mt-8 md:mt-10 md:grid md:grid-cols-2 md:gap-x-8 xl:mt-0 xl:col-span-2">
