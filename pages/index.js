@@ -8,10 +8,22 @@ import FeatureList from '../components/feature-list'
 import FeatureForm from '../components/feature-form'
 import useSWR from 'swr'
 import { FEATURE_TYPE } from '../lib/const'
+import { Disclosure } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/outline'
+import {
+  CloudUploadIcon,
+  CogIcon,
+  LockClosedIcon,
+  RefreshIcon,
+  ServerIcon,
+  ShieldCheckIcon,
+} from '@heroicons/react/outline'
 
 const footerNavigation = {
   solutions: [
-    { name: 'Become a Restaurant Partner', href: 'https://app.eatblynd.com/join/' },
+    { name: 'Restaurants', href: '/restaurants' },
+    { name: 'Foodies ', href: 'https://menyou.eatblynd.com' },
+    { name: 'Newsletter ', href: 'https://www.getrevue.co/profile/blynd' }
   ],
   social: [
     {
@@ -38,6 +50,37 @@ const footerNavigation = {
     },
   ],
 }
+
+const faqs = [
+  {
+    id: 1,
+    question: "How does Blynd work?",
+    answer:
+      "Blynd takes the decision fatigue out of ordering. Restaurants serve one mystery dish at one serving time. Customers order ahead and show up to the restaurant at the respective serving time to experience food serendipity.",
+  },
+  {
+    id: 2,
+    question: "What if I have food allergies?",
+    answer:
+      "We ask restaurants to provide information on shellfish, nut, gluten, vegetarian, vegan and dairy allergies.",
+  },
+  {
+    id: 3,
+    question: "Do you deliver?",
+    answer:
+      "Blynd is focused on pick-up orders. This means it doesn't have to acquire or manage drivers, and can both offer lower prices and shift those dollars to build other parts of its ecosystem. Namely focusing on the cashierless transformation and order ahead.",
+  },
+]
+
+        
+        const features = [
+          { name: 'Push to Deploy', icon: CloudUploadIcon },
+          { name: 'SSL Certificates', icon: LockClosedIcon },
+          { name: 'Simple Queues', icon: RefreshIcon },
+          { name: 'Advanced Security', icon: ShieldCheckIcon },
+          { name: 'Powerful API', icon: CogIcon },
+          { name: 'Database Backups', icon: ServerIcon },
+        ]
 
 
 export default function Example() {
@@ -192,6 +235,11 @@ export default function Example() {
         }
       })
   })
+
+  function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
   return (
     <div className="bg-white">
       <div className="relative overflow-hidden">
@@ -269,7 +317,7 @@ export default function Example() {
               </div>
               <div className="hidden md:flex md:space-x-10">
                 {footerNavigation.solutions.map((item) => (
-                  <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
+                  <a key={item.name} href={item.href} target="_blank" className="font-medium text-gray-500 hover:text-gray-900">
                     {item.name}
                   </a>
                 ))}
@@ -392,14 +440,81 @@ export default function Example() {
           </div>
         </main>
 
+    {/* <div className="relative bg-white py-16 sm:py-24 lg:py-32 -mt-20">
+      <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+        <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">Deploy faster</h2>
+        <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+          Everything you need to deploy your app
+        </p>
+        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+          Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper
+          malesuada. Eleifend condimentum id viverra nulla.
+        </p>
+        <div className="mt-12">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+              <div key={feature.name} className="pt-6">
+                <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                  <div className="-mt-6">
+                    <div>
+                      <span className="inline-flex items-center justify-center p-3 bg-cyan-500 rounded-md shadow-lg">
+                        <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                      </span>
+                    </div>
+                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">{feature.name}</h3>
+                    <p className="mt-5 text-base text-gray-500">
+                      Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div> */}
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white -mt-10">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
+          <h2 className="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">Frequently asked questions</h2>
+          <dl className="mt-6 space-y-6 divide-y divide-gray-200">
+            {faqs.map((faq) => (
+              <Disclosure as="div" key={faq.question} className="pt-6">
+                {({ open }) => (
+                  <>
+                    <dt className="text-lg">
+                      <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
+                        <span className="font-medium text-gray-900">{faq.question}</span>
+                        <span className="ml-6 h-7 flex items-center">
+                          <ChevronDownIcon
+                            className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
+                            aria-hidden="true"
+                          />
+                        </span>
+                      </Disclosure.Button>
+                    </dt>
+                    <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                      <p className="text-base text-gray-500">{faq.answer}</p>
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </div>
+
+
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-6 xl:gap-x-8">
               <div className="bg-gray-100 rounded-lg p-6 flex items-center sm:p-10">
                 <div className="max-w-sm mx-auto">
                   <h3 className="font-semibold text-gray-900">Sign up for our newsletter</h3>
                   <p className="mt-2 text-sm text-gray-500">
-                    The first place we send restaurant reviews, recommendations, and curated menus, sent to your inbox weekly.
+                    The latest restaurant reviews, recommendations, and curated menus, sent to your inbox weekly.
                   </p>
                   <form onSubmit={newsletterSubsctiber} className="mt-4 sm:mt-6 sm:flex">
                     <label htmlFor="email" className="sr-only">
