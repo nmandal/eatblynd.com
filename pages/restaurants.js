@@ -109,7 +109,7 @@ export default function Example() {
               target="_blank"
               className="mt-8 w-full bg-cyan-600 border border-transparent rounded-md py-3 px-5 inline-flex items-center justify-center text-base font-medium text-white hover:bg-cyan-700 sm:mt-10 sm:w-auto xl:mt-0"
             >
-              Get started today
+              Get started
             </a>
           </div>
           <div className="border-t border-gray-200 pt-16 xl:grid xl:grid-cols-3 xl:gap-x-8">
