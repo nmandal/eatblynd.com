@@ -555,7 +555,7 @@ export default function Example() {
                   <h3 className="text-2xl font-extrabold tracking-tight text-white">Jump waiting list</h3>
                   <p className="mt-2 text-gray-200">
                     Did you sign up to the newsletter? Subscribers get priority access to the launch.{' '}
-                    <a target="_blank" href="https://www.getrevue.co/profile/blynd" className="font-bold text-white whitespace-nowrap hover:text-gray-200">
+                    <a target="_blank" href="https://blog.eatblynd.com" className="font-bold text-white whitespace-nowrap hover:text-gray-200">
                       Go now<span aria-hidden="true"> &rarr;</span>
                     </a>
                   </p>
