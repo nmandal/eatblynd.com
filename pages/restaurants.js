@@ -231,14 +231,14 @@ export default function Example() {
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Get in touch</h2>
           <p className="mt-4 text-lg leading-6 text-gray-500">
-          We’d love to hear from you! Send us a message using the form opposite, or email us.
+            We'd love to hear from you! Send us a message using the form below and we'll reach out ASAP. Tell us in the message what you'd like to serve as your first Blynd special!
           </p>
         </div>
         <div className="mt-12">
           <form onSubmit={handleSubmit} method="POST" className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             <div className="sm:col-span-2">
               <label htmlFor="restaurant" className="block text-sm font-medium text-gray-700">
-                Business name
+                Restaurant name
               </label>
               <div className="mt-1">
                 <input
@@ -256,7 +256,7 @@ export default function Example() {
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="address" className="block text-sm font-medium text-gray-700">
-                Business address
+                Address
               </label>
               <div className="mt-1">
                 <input
