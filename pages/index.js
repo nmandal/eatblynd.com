@@ -23,7 +23,7 @@ const footerNavigation = {
   solutions: [
     { name: 'Restaurants', href: '/restaurants' },
     { name: 'Foodies ', href: 'https://menyou.eatblynd.com' },
-    { name: 'Newsletter ', href: 'https://www.getrevue.co/profile/blynd' }
+    { name: 'Blog ', href: 'https://blog.eatblynd.com' }
   ],
   social: [
     {
