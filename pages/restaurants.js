@@ -3,6 +3,7 @@ import {
   CheckIcon,
 } from '@heroicons/react/outline'
 import { useState } from 'react'
+import toast from 'react-hot-toast';
 
 const features = [
   'Receive valuable feedback from your repeat customers',
@@ -111,6 +112,7 @@ export default function Example() {
     setEmail('');
     setPhone('');
     setMessage('');
+    toast.success("Thank you! We'll be in touch ASAP")
   };
 
   return (
