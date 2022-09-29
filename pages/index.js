@@ -332,14 +332,6 @@ export default function Example() {
                       src="https://tailwindui.com/img/logos/workflow-mark-cyan-600.svg"
                       alt=""
                     /> */}
-                          <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                            <Image
-                              src="/blynd.png"
-                              alt=""
-                              className="h-8 w-8"
-                              unoptimized
-                            />
-                          </div>
                         </a>
                         <div className="-mr-2 flex items-center md:hidden">
                           <Popover.Button className="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500">
@@ -379,18 +371,12 @@ export default function Example() {
                   >
                     <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="px-5 pt-4 flex items-center justify-between">
-                        <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                        <div>
                           {/* <img
                             className="h-8 w-auto"
                             src="https://tailwindui.com/img/logos/workflow-mark-cyan-600.svg"
                             alt=""
                           /> */}
-                          <Image
-                            src="/blynd.png"
-                            alt=""
-                            className="h-8 w-8"
-                            unoptimized
-                          />
                         </div>
                         <div className="-mr-2">
                           <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500">
